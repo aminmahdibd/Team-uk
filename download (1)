@@ -1,0 +1,141 @@
+import React from "react";
+
+interface AvatarProps {
+  className?: string;
+}
+
+export default function EshatAminAvatar({ className = "w-full h-full" }: AvatarProps) {
+  return (
+    <svg 
+      viewBox="0 0 400 400" 
+      className={`${className}`}
+      xmlns="http://www.w3.org/2000/svg"
+      id="eshat-amin-avatar"
+    >
+      <defs>
+        <radialGradient id="eshat-bg-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#a855f7" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#08020b" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id="eshat-skin-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#fad0b2" />
+          <stop offset="100%" stopColor="#dc9f7d" />
+        </linearGradient>
+        <linearGradient id="eshat-hair-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#1e181c" />
+          <stop offset="100%" stopColor="#0a0507" />
+        </linearGradient>
+        <linearGradient id="eshat-blouse-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#f3f4f6" />
+        </linearGradient>
+      </defs>
+
+      {/* Atmospheric Dark Purple / Sunset Background */}
+      <rect width="100%" height="100%" fill="#0c0410" />
+      <circle cx="200" cy="180" r="185" fill="url(#eshat-bg-glow)" />
+      
+      {/* City Bokeh Sparkles (Amber/Purple Glows) */}
+      <circle cx="90" cy="110" r="8" fill="#d97706" opacity="0.12" />
+      <circle cx="310" cy="90" r="15" fill="#a855f7" opacity="0.08" />
+      <circle cx="330" cy="200" r="10" fill="#f43f5e" opacity="0.08" />
+      <circle cx="70" cy="230" r="12" fill="#7c3aed" opacity="0.1" />
+
+      {/* Back Hair layer (covers rear shoulders) */}
+      <path d="M 110 200 C 90 280, 100 360, 140 380 L 260 380 C 300 360, 310 280, 290 200 Z" fill="#0c070a" />
+
+      {/* Body / Neck */}
+      <path d="M 182 210 L 182 280 L 218 280 L 218 210 Z" fill="url(#eshat-skin-grad)" />
+      <path d="M 182 210 Q 200 225 218 210 L 218 222 Q 200 238 182 222 Z" fill="#b07255" opacity="0.65" />
+
+      {/* White Patterned Blouse */}
+      <path d="M 90 350 C 120 300, 150 280, 200 280 C 250 280, 280 300, 310 350 L 325 400 L 75 400 Z" fill="url(#eshat-blouse-grad)" />
+      
+      {/* V-neck collar line */}
+      <path d="M 174 280 L 200 325 L 226 280" fill="none" stroke="#e4e4e7" strokeWidth="2" />
+      {/* Shadow under neckline */}
+      <path d="M 182 280 L 200 310 L 218 280 Z" fill="#9d6746" opacity="0.15" />
+
+      {/* Artistic Black Leaf Prints on White Blouse (Matching her photo exactly) */}
+      <g opacity="0.9">
+        {/* Left Shoulder Leaves */}
+        <path d="M 115 315 Q 125 305 133 320 Q 120 330 115 315" fill="#18181b" />
+        <path d="M 128 328 Q 140 322 145 338 Q 132 342 128 328" fill="#1e1b1c" />
+        <path d="M 106 338 Q 98 330 112 325 Q 115 338 106 338" fill="#1e1015" />
+        
+        {/* Center / Front Leaves */}
+        <path d="M 160 348 Q 172 338 180 350 Q 170 362 160 348" fill="#111115" />
+        <path d="M 188 355 Q 200 345 204 362 Q 192 370 188 355" fill="#1e1e24" />
+        <path d="M 148 370 Q 155 358 165 372 Q 155 382 148 370" fill="#18181b" />
+
+        {/* Right Shoulder Leaves */}
+        <path d="M 270 315 Q 260 305 252 320 Q 265 330 270 315" fill="#18181b" />
+        <path d="M 258 332 Q 248 322 242 338 Q 254 344 258 332" fill="#1e1b1c" />
+        <path d="M 284 336 Q 292 325 278 322 Q 275 336 284 336" fill="#1a1a20" />
+        
+        {/* Chest area leaves */}
+        <path d="M 230 355 Q 218 345 214 362 Q 226 370 230 355" fill="#1e1e24" />
+        <path d="M 242 375 Q 232 368 226 385 Q 238 390 242 375" fill="#111115" />
+      </g>
+
+      {/* Head / Face Base */}
+      <path d="M 145 150 C 145 92, 255 92, 255 150 C 255 210, 248 238, 200 244 C 152 238, 145 210, 145 150 Z" fill="url(#eshat-skin-grad)" />
+
+      {/* Ears */}
+      <circle cx="140" cy="165" r="10" fill="#ebb190" />
+      <circle cx="260" cy="165" r="10" fill="#ebb190" />
+
+      {/* Expressive Warm Eyes (Smiling) */}
+      {/* Slight curvature to mimic a warm smile */}
+      <path d="M 162 143 Q 174 137 184 144" fill="none" stroke="#120c10" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M 238 143 Q 226 137 216 144" fill="none" stroke="#120c10" strokeWidth="2.5" strokeLinecap="round" />
+      {/* Upper eyelash arcs */}
+      <path d="M 160 144 Q 173 135 186 144" fill="none" stroke="#1c181c" strokeWidth="3" opacity="0.9" />
+      <path d="M 240 144 Q 227 135 214 144" fill="none" stroke="#1c181c" strokeWidth="3" opacity="0.9" />
+      {/* Lower outline */}
+      <path d="M 164 148 Q 173 152 182 148" fill="none" stroke="#7c533c" strokeWidth="1" />
+      <path d="M 236 148 Q 227 152 218 148" fill="none" stroke="#7c533c" strokeWidth="1" />
+      {/* Dark brown pupils with lively glint */}
+      <circle cx="173" cy="146" r="4.5" fill="#402418" />
+      <circle cx="227" cy="146" r="4.5" fill="#402418" />
+      <circle cx="174" cy="146" r="2" fill="#1c0f0a" />
+      <circle cx="226" cy="146" r="2" fill="#1c0f0a" />
+      <circle cx="171.5" cy="144" r="1.2" fill="#ffffff" />
+      <circle cx="225.5" cy="144" r="1.2" fill="#ffffff" />
+
+      {/* Feminine defined Eyebrows */}
+      <path d="M 158 135 Q 171 125 184 133" fill="none" stroke="#181115" strokeWidth="3.2" strokeLinecap="round" />
+      <path d="M 242 135 Q 229 125 216 133" fill="none" stroke="#181115" strokeWidth="3.2" strokeLinecap="round" />
+
+      {/* Nose */}
+      <path d="M 200 140 L 200 184 Q 200 188 204 186 Q 196 186 200 184" fill="none" stroke="#ac6a46" strokeWidth="2.2" strokeLinecap="round" />
+      <ellipse cx="195" cy="184" rx="2" ry="1" fill="#ac6a46" opacity="0.4" />
+      <ellipse cx="205" cy="184" rx="2" ry="1" fill="#ac6a46" opacity="0.4" />
+
+      {/* Warm Smiling Mouth (Happy with beautiful teeth visible) */}
+      <path d="M 178 202 C 182 222, 218 222, 222 202 C 224 199, 176 199, 178 202 Z" fill="#881337" />
+      {/* Teeth */}
+      <path d="M 181 202 Q 200 207 219 202 L 217 205 Q 200 210 183 205 Z" fill="#ffffff" />
+      {/* Crimson lip line */}
+      <path d="M 176 201 Q 200 226 224 201" fill="none" stroke="#be123c" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M 176 201 Q 200 196 224 201" fill="none" stroke="#e11d48" strokeWidth="1" strokeLinecap="round" />
+
+      {/* Highly Characteristic Dimpled Cheeks */}
+      {/* Soft curved dimple highlights when smiling */}
+      <path d="M 166 195 Q 163 204 167 212" fill="none" stroke="#b07255" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+      <path d="M 234 195 Q 237 204 233 212" fill="none" stroke="#b07255" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+
+      {/* Front Flowing Luxurious Wavy Hair Layer (Over shoulders) */}
+      {/* Left flowing segment */}
+      <path d="M 200 90 C 135 90, 125 150, 125 210 C 125 250, 100 280, 110 330 C 115 350, 130 350, 134 320 C 138 280, 145 220, 145 190 Z" fill="url(#eshat-hair-grad)" />
+      {/* Right flowing segment - extremely large and rich waves flowing over her shoulder */}
+      <path d="M 200 90 C 265 90, 272 150, 272 210 C 272 260, 285 285, 280 340 C 276 375, 255 375, 250 330 C 242 270, 255 215, 215 130 Z" fill="url(#eshat-hair-grad)" />
+
+      {/* Elegant Hair Wave Highlights */}
+      <path d="M 175 95 Q 140 120, 132 180" fill="none" stroke="#5a4150" strokeWidth="1.8" opacity="0.35" />
+      <path d="M 225 95 Q 260 128, 265 190" fill="none" stroke="#5a4150" strokeWidth="1.8" opacity="0.35" />
+      <path d="M 255 210 Q 275 250, 270 300" fill="none" stroke="#5a4150" strokeWidth="2.2" opacity="0.3" strokeLinecap="round" />
+      <path d="M 245 260 Q 262 290, 258 325" fill="none" stroke="#704d60" strokeWidth="1.5" opacity="0.25" strokeLinecap="round" />
+    </svg>
+  );
+}
